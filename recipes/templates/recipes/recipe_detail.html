@@ -1,0 +1,12 @@
+{% extends 'recipes/base.html' %}
+
+{% block content %}
+    <h1>{{ recipe.name }}</h1>
+    <p><strong>材料:</strong><br>{{ recipe.ingredients|linebreaks }}</p>
+    <p><strong>作り方:</strong><br>{{ recipe.instructions|linebreaks }}</p>
+    <p><strong>準備時間:</strong> {{ recipe.preparation_time }}分</p>
+    <p><strong>調理時間:</strong> {{ recipe.cooking_time }}分</p>
+    <p><strong>何人分:</strong> {{ recipe.serves }}人分</p>
+    <a href="{% url 'recipe_edit' pk=recipe.pk %}" class="btn btn-primary">編集</a>
+    <a href="{% url 'recipe_list' %}" class="btn btn-secondary">戻る</a>
+{% endblock %}

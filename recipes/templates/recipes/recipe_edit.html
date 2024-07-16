@@ -1,0 +1,10 @@
+{% extends 'recipes/base.html' %}
+
+{% block content %}
+    <h1>{% if form.instance.pk %}レシピ編集{% else %}新規レシピ{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">保存</button>
+    </form>
+{% endblock %}
